@@ -33,7 +33,7 @@ pipeline {
             steps {
                 script {
                 def currentUser = sh(script: 'whoami', returnStdout: true).trim()
-                    sh "docker push ${currentUser}/iris-classifier:latest"
+                    sh "docker push vibhupuri/iris-classifier:latest"
                 }
             }
         }
