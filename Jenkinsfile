@@ -28,7 +28,15 @@ pipeline {
                 }
             }
         }
-
+stage('Login to Docker Hub') {
+            steps {
+                script {
+     withCredentials([usernamePassword(credentialsId: '064e341d-3edf-4d73-8ab4-c98f7efa7a1e', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                        sh 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin'
+                }
+              }
+            }
+        }
         stage('Push Docker Image') {
             steps {
                 script {
