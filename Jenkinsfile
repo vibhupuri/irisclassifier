@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = 'username/iris-classifier:latest'
+        IMAGE_NAME = 'vibhupuri/iris-classifier:latest'
     }
 
     stages {
